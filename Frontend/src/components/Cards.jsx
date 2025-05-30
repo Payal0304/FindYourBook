@@ -16,7 +16,7 @@ function Cards({ item, addToCart }) {
           <div className="card-actions justify-between items-end mt-4">
             <div className="badge badge-outline">${item.price}</div>
             <div
-              className="cursor-pointer px-3 py-1 rounded-full border-[2px] hover:bg-pink-500 hover:text-white duration-200"
+              className="cursor-pointer px-3 py-1 rounded-full border-[2px] btn-custom duration-200"
               onClick={() => addToCart(item)}
             >
               Buy Now

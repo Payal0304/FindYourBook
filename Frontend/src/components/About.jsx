@@ -30,9 +30,9 @@ const About = () => {
   <li>Customer Service: Our customer support team is here to help you with any questions or concerns. Your satisfaction is our priority.</li> <br />
   <li>Innovation: We are constantly innovating and improving our services to meet the changing needs of our customers.</li>
   <ul>
+    <br />
 
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo eum quisquam provident molestiae, dicta praesentium. Laboriosam itaque ipsum vel voluptatum sit, quae accusamus velit culpa, illum fugit eius tempora architecto eaque numquam consectetur rem. Est dignissimos eius ipsum nihil minus esse repellendus ea perferendis ipsam similique, magni quisquam quaerat? Porro nemo, voluptates error dolorum hic molestias sed non libero facilis excepturi placeat veritatis voluptatem dolor doloremque magni ipsam cumque officiis modi totam repudiandae explicabo iusto! Eaque blanditiis error a temporibus tempore. Voluptates neque consectetur similique nemo iste eos molestias cum, at modi ea dolor itaque temporibus eius doloribus illo sed?
-  </ul></ul>
+At FindYourBook, innovation drives everything we do. We constantly seek new ways to enhance your reading experience, from intuitive search features to personalized recommendations. Our team embraces the latest technologies to make discovering, purchasing, and enjoying books easier and more enjoyable for everyone. We believe that by fostering a culture of creativity and continuous improvement, we can deliver unique solutions that set us apart in the world of online book shopping.  </ul></ul>
 
            
             
