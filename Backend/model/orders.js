@@ -1,5 +1,12 @@
 import mongoose from 'mongoose';
 
+const CartItemSchema = new mongoose.Schema({
+  itemId: { type: String, required: true },
+  title:  { type: String, required: true },
+  price:  { type: Number, required: true },
+  quantity: { type: Number, required: true }
+});
+
 const OrderSchema = new mongoose.Schema({
   firstName: { type: String, required: true, trim: true },
   lastName:  { type: String, required: true, trim: true },
@@ -9,7 +16,9 @@ const OrderSchema = new mongoose.Schema({
   city:      { type: String, required: true, trim: true },
   state:     { type: String, required: true, trim: true },
   zipcode:   { type: String, required: true, trim: true },
-});
+
+  cart:      { type: [CartItemSchema], required: true } 
+}, { timestamps: true });
 
 const Order = mongoose.model('Order', OrderSchema);
 export default Order;

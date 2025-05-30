@@ -14,7 +14,7 @@ const About = () => {
             </span>
 
             <Link to="/">
-              <button className="mt-6 bg-pink-500 text-white px-4 py-2 rounded-md hover:bg-pink-700 duration-300">
+              <button className="mt-6 btn-custom px-4 py-2 rounded-md duration-300">
                 Back
               </button>
             </Link>

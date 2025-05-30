@@ -27,7 +27,6 @@ function CheckOut() {
   };
 
   const handlePass = async () => {
-    // Validate required fields
     const requiredFields = [
       { name: 'firstName', label: 'First Name' },
       { name: 'lastName', label: 'Last Name' },
@@ -42,7 +41,7 @@ function CheckOut() {
     for (const field of requiredFields) {
       if (!formData[field.name].trim()) {
         toast.error(`${field.label} is required`);
-        return; // stop submission if any required field is empty
+        return;
       }
     }
 
@@ -72,8 +71,8 @@ function CheckOut() {
   return (
     <div className="max-w-screen-2xl mx-auto px-4 md:px-20">
       <Navbar />
-      <div className="mt-28 text-center">
-        <div className="py-3 bg-yellow-200 font-semibold text-sm">
+      <div className="mt-28">
+        <div className="py-3 bg-yellow-200 font-semibold text-sm text-center">
           HOME / CHECKOUT
           <div className="mt-4">
             <Link to="/course">
@@ -84,10 +83,10 @@ function CheckOut() {
           </div>
         </div>
 
+        {/* Basic Info Form */}
         <div className="mt-10">
-          <h2 className="text-2xl font-bold mb-6">Basic Information</h2>
+          <h2 className="text-2xl font-bold mb-6 text-center">Basic Information</h2>
           <form className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto text-left">
-            {/* form inputs unchanged */}
             <div>
               <label className="block mb-2 font-medium">First Name</label>
               <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} className="w-full border rounded-md px-3 py-2" />
@@ -120,13 +119,49 @@ function CheckOut() {
               <label className="block mb-2 font-medium">Zip Code</label>
               <input type="text" name="zipcode" value={formData.zipcode} onChange={handleChange} className="w-full border rounded-md px-3 py-2" />
             </div>
-            <div className="md:col-span-2 text-right">
+           
+          </form>
+        </div>
+
+        {/* Cart Summary */}
+        <div className="mt-16 max-w-4xl mx-auto">
+          <h3 className="text-xl font-semibold mb-4">Selected Books:</h3>
+          {cartItems.length === 0 ? (
+            <p className="text-gray-600">No items selected.</p>
+          ) : (
+            <div className="grid grid-cols-1 gap-4">
+              {cartItems.map(({ item, quantity }) => (
+                <div
+                  key={item.id}
+                  className="flex items-center justify-between border p-4 rounded bg-gray-100"
+                >
+                  <div className="flex items-center gap-4">
+                    <img src={item.image} alt={item.title} className="w-16 h-20 object-cover rounded" />
+                    <div>
+                      <h4 className="font-bold">{item.title}</h4>
+                      <p>Quantity: {quantity}</p>
+                      <p className="text-sm text-gray-600">${item.price}</p>
+                    </div>
+                  </div>
+                  <div className="font-semibold text-gray-700">
+                    ${(item.price * quantity).toFixed(2)}
+                  </div>
+                </div>
+              ))}
+              <div className="text-right font-bold text-lg mt-2">
+                Total: $
+                {cartItems
+                  .reduce((total, { item, quantity }) => total + item.price * quantity, 0)
+                  .toFixed(2)}
+              </div>
+            </div>
+          )}
+        </div>
+         <div className="md:col-span-2 text-right">
               <button type="button" onClick={handlePass} className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-500 transition duration-300">
                 Place Order
               </button>
             </div>
-          </form>
-        </div>
       </div>
       <Footer />
     </div>

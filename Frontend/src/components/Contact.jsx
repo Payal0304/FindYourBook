@@ -15,14 +15,26 @@ const Contact= ()=>{
             </div>
            
             <Link to="/">
-              <button className="mt-6 bg-pink-500 text-white px-4 py-2 rounded-md hover:bg-pink-700 duration-300">
+              <button className="mt-6 btn-custom px-4 py-2 rounded-md duration-300">
                 Back
               </button>
             </Link>
             <p className="mt-12" style={{fontSize:"20px", fontWeight:"bold"}}>
                Feel free to contact us anytime 24X7
             </p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad repudiandae incidunt rem beatae laudantium perferendis debitis quibusdam, eveniet vitae deleniti magnam quo sunt quaerat voluptatem similique maiores in assumenda itaque.
+            We’d love to hear from you! Whether you have a question about our books, your order, or anything else, our team is ready to answer all your questions.
+
+You can reach us by:
+<ul>
+  <li>Email: support@findyourbook.com</li>
+  <li>Phone: +1 (123) 456-7890</li>
+  <li>Address:
+FindYourBook
+123 Book Lane
+City, State, ZIP</li>
+</ul>
+
+
         </div>
         <Footer/>
         </div>

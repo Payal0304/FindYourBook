@@ -9,7 +9,7 @@ function Banner() {
             <div className="space-y-8">
               <h1 className="text-2xl md:text-4xl font-bold">
                 Hello Readers, welcomes here to learn something{" "}
-                <span className="text-pink-500">new everyday!!!</span>
+                <span style={{ color: '#90d52f' }}>new everyday!!!</span>
               </h1>
               <p className="text-sm md:text-xl">
                Join us today and find the treasury. Let your thoughts to go beyond the limit and create its own world...
@@ -28,7 +28,7 @@ function Banner() {
               </label>
             </div>
           <Link to="/signup">
-          <button className="btn mt-6 btn-secondary">Get Started</button>
+          <button className="btn mt-6 btn-custom">Get Started</button>
      
           </Link>
            

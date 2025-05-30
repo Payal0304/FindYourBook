@@ -60,7 +60,6 @@ function Course() {
 
   return (
     <>
-      {/* Cart Icon */}
       <div className="fixed top-24 left-4 z-50">
         <div onClick={() => setShowCart(!showCart)} className="cursor-pointer relative">
           <svg
@@ -86,7 +85,6 @@ function Course() {
 
 {showCart && (
   <div className="fixed top-20 right-0 w-[420px] h-[88vh] bg-[#2f2f2f] text-white shadow-lg z-40 flex flex-col justify-between rounded-l-xl">
-    {/* Header */}
     <div className="flex justify-between items-center p-4 border-b border-gray-700">
       <h2 className="text-lg font-bold">SHOPPING CART</h2>
       <div className="text-md font-semibold">
@@ -97,7 +95,6 @@ function Course() {
       </div>
     </div>
 
-    {/* Cart Items */}
     <div className="flex-grow overflow-y-auto p-4 space-y-4">
       {cartItems.length === 0 ? (
         <p className="text-center text-gray-300">Your cart is empty.</p>
@@ -136,7 +133,6 @@ function Course() {
       )}
     </div>
 
-    {/* Footer Buttons */}
     <div className="p-4 border-t border-gray-700 flex justify-between space-x-3">
       <button
         className="bg-yellow-400 text-black w-1/2 py-2 rounded font-bold hover:bg-yellow-500"
@@ -144,20 +140,24 @@ function Course() {
       >
         CLOSE
       </button>
-      <Link to="/checkout" className="w-1/2">
-        <button className="bg-yellow-400 text-black w-full py-2 rounded font-bold hover:bg-yellow-500">
-          CHECK OUT
-        </button>
-      </Link>
+      <Link
+  to="/checkout"
+  state={{ cartItems }}
+  className="w-1/2"
+>
+  <button className="bg-yellow-400 text-black w-full py-2 rounded font-bold hover:bg-yellow-500">
+    CHECK OUT
+  </button>
+</Link>
+
     </div>
   </div>
 )}
 
-      {/* Main Content */}
       <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 body">
         <div className="mt-28 items-center justify-center text-center">
           <h1 className="text-2xl md:text-4xl">
-            We're delighted to have you <span className="text-pink-500">Here! :)</span>
+            We're delighted to have you <span style={{ color: '#90d52f' }}>Here! :)</span>
           </h1>
           <p className="mt-12">
             There are different genres of books available for book readers. Every day,
@@ -165,13 +165,12 @@ function Course() {
             fictional books.
           </p>
           <Link to="/">
-            <button className="mt-6 bg-pink-500 text-white px-4 py-2 rounded-md hover:bg-pink-700 duration-300">
+            <button className="mt-6 btn-custom px-4 py-2 rounded-md duration-300">
               Back
             </button>
           </Link>
         </div>
 
-        {/* Book Cards */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-4">
           {book.map((item) => (
             <Cards key={item.id} item={item} addToCart={addToCart} />
