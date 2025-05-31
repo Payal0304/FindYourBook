@@ -67,11 +67,12 @@ function Freebook() {
           </div>
   
           <div>
-            <Slider {...settings}>
-             {book.map((item)=>(
-              <Cards item={item} key={item.id}/>
-             ))}
-            </Slider>
+           <Slider {...settings}>
+  {book.map((item) => (
+    <Cards item={item} key={item.id} redirectOnly={true} />
+  ))}
+</Slider>
+
           </div>
         </div>
       </>

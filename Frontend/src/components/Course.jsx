@@ -33,7 +33,12 @@ function Course() {
         return [...prev, { item, quantity: 1 }];
       }
     });
-    toast.success(`${item.title} added to cart`);
+    toast.success(
+  <span>
+    <span style={{ color: '#006400', fontWeight: 'bold' }}>{item.title}</span> added to cart
+  </span>
+);
+
   };
 
   const increaseQuantity = (id) => {

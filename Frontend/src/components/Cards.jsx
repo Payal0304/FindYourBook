@@ -1,4 +1,17 @@
-function Cards({ item, addToCart }) {
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
+function Cards({ item, addToCart, redirectOnly = false }) {
+  const navigate = useNavigate();
+
+  const handleBuyNow = () => {
+    if (redirectOnly) {
+      navigate("/course");
+    } else {
+      addToCart(item);
+    }
+  };
+
   return (
     <div className="mt-4 my-3 p-3">
       <div className="card w-80 h-[450px] bg-base-100 shadow-xl hover:scale-105 duration-200 dark:bg-slate-900 dark:text-white dark:border flex flex-col justify-between">
@@ -17,7 +30,7 @@ function Cards({ item, addToCart }) {
             <div className="badge badge-outline">${item.price}</div>
             <div
               className="cursor-pointer px-3 py-1 rounded-full border-[2px] btn-custom duration-200"
-              onClick={() => addToCart(item)}
+              onClick={handleBuyNow}
             >
               Buy Now
             </div>
@@ -27,4 +40,5 @@ function Cards({ item, addToCart }) {
     </div>
   );
 }
+
 export default Cards;
